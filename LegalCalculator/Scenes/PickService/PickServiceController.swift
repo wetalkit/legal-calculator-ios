@@ -53,7 +53,8 @@ class PickServiceController: BaseController {
 
 extension PickServiceController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        router.showMainVC()
+        let service = services[indexPath.row]
+        router.showMainVC(service: service)
     }
 }
 extension PickServiceController: UITableViewDataSource{

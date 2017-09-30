@@ -20,7 +20,6 @@ protocol PickServiceInteractorOutput
 
 class PickServiceInteractor : PickServiceInteractorInput
 {
-    
     var output: PickServiceInteractorOutput!
     var worker: PickServiceWorker!
     

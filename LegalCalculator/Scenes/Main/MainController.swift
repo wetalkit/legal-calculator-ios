@@ -21,11 +21,12 @@ protocol MainControllerOutput
 class MainController: BaseController {
     var output: MainControllerOutput!
     var router: MainRouter!
+    var service: Service!
     
     //MARK: - Private Properties
     @IBOutlet fileprivate weak var mainTableView: UITableView!
 
-    fileprivate let cells: [MainCellType] = [.input, .input, .dropdown, .input, .dropdown, .dropdown, .button]
+//    fileprivate let cells: [MainCellType] = [.input, .input, .dropdown, .input, .dropdown, .dropdown, .button]
     
     // MARK: - Object lifecycle
     override func awakeFromNib(){
@@ -52,14 +53,18 @@ extension MainController: UITableViewDelegate{
 }
 extension MainController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cells.count
+        if let inputs = service.inputs{
+            return inputs.count
+        }
+        return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let type = cells[indexPath.row]
+        guard let input = service.inputs?[indexPath.row], let type = input.type else {return UITableViewCell()}
         
         let cell = tableView.dequeueReusableCell(withIdentifier: type.cellType().cellReuseIdentifier()) as! BaseCell
         cell.type = type
-        
+        cell.updateCellWithInput(input: input)
+
         if type == .dropdown{
             let c = cell as! DropdownCell
             c.onDropdownBlock = { [weak self] (options) in
@@ -90,14 +95,19 @@ private extension MainController{
     func setupUI(){
         navigationController?.navigationBar.topItem?.title = ""
         navigationController?.navigationBar.barTintColor = UIColor.white
+        title = service.title
+        mainTableView.reloadData()
 
-        title = "Купопродажба на имот"
         registerCells()
     }
     
     func registerCells(){
-        for type in cells{
-            mainTableView.registerNibForCellClass(type.cellType())
+        if let inputs = service.inputs{
+            for i in inputs{
+                if let type = i.type?.cellType(){
+                    mainTableView.registerNibForCellClass(type)
+                }
+            }
         }
     }
     

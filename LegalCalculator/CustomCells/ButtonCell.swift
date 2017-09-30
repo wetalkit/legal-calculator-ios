@@ -21,6 +21,10 @@ class ButtonCell: BaseCell {
         // Initialization code
     }
     
+    override func updateCellWithInput(input: Inputs) {
+        
+    }
+    
     @IBAction func onActionButton(btn: UIButton){
         onActionBlock?()
     }

@@ -10,6 +10,10 @@ import UIKit
 
 class InputCell: BaseCell {
 
+    //MARK: - Private Properties
+    @IBOutlet fileprivate weak var inputTxt: UITextField!
+    @IBOutlet fileprivate weak var titleLbl: UILabel!
+
     var textBlock: ((String) -> ())?
     
     override func awakeFromNib() {
@@ -21,6 +25,9 @@ class InputCell: BaseCell {
         if let text = textField.text{
             textBlock?(text)
         }
+    }
+    override func updateCellWithInput(input: Inputs) {
+        titleLbl.text = input.name
     }
 }
 

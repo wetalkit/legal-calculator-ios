@@ -24,6 +24,9 @@ class DropdownCell: BaseCell {
         dropdownBtn.setTitle(text, for: .normal)
     }
     
+    override func updateCellWithInput(input: Inputs) {
+        
+    }
     @IBAction func onDropdownButton(btn: UIButton){
         onDropdownBlock?(["1", "2", "3", "4", "5"])
     }
