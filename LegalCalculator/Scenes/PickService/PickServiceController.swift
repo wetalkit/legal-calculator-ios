@@ -53,7 +53,8 @@ class PickServiceController: BaseController {
 
 extension PickServiceController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        router.showMainVC()
+        let service = services[indexPath.row]
+        router.showMainVC(service: service)
     }
 }
 extension PickServiceController: UITableViewDataSource{
@@ -65,7 +66,6 @@ extension PickServiceController: UITableViewDataSource{
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-        cell.textLabel?.text = "Купопродажба на имот"
         cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear
         cell.textLabel?.text = service.title

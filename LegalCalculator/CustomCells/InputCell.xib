@@ -63,6 +63,10 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="inputTxt" destination="es4-21-aOM" id="g0E-WM-JFr"/>
+                <outlet property="titleLbl" destination="YrC-0g-5Vz" id="UCC-bZ-5IO"/>
+            </connections>
             <point key="canvasLocation" x="42" y="70"/>
         </tableViewCell>
     </objects>
