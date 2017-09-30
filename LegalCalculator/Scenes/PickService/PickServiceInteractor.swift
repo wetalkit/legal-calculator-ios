@@ -27,7 +27,7 @@ class PickServiceInteractor : PickServiceInteractorInput
     func fetchServices() {
         worker = PickServiceWorker()
         worker.fetch(success: { (services) in
-            self.output.presentServices(response: PickServiceModel.Fetch.Response(services: services, isError: services != nil, message: services != nil ? "No Results Found." : nil))
+            self.output.presentServices(response: PickServiceModel.Fetch.Response(services: services, isError: services == nil, message: services == nil ? "No Results Found." : nil))
         }) { (error) in
             self.output.presentServices(response: PickServiceModel.Fetch.Response(services: nil, isError: true, message: "No Results Found."))
         }

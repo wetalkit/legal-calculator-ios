@@ -65,7 +65,6 @@ extension PickServiceController: UITableViewDataSource{
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-        cell.textLabel?.text = "Купопродажба на имот"
         cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear
         cell.textLabel?.text = service.title

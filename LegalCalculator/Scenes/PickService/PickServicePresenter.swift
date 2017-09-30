@@ -11,7 +11,6 @@ import Foundation
 protocol PickServicePresenterInput
 {
     func presentServices(response: PickServiceModel.Fetch.Response);
-    //    func presentFetchResults(response: TestModel.Fetch.Response);
 }
 
 protocol PickServicePresenterOutput: class
@@ -26,7 +25,7 @@ class PickServicePresenter: PickServicePresenterInput {
     
     // MARK: - Presentation logic
     func presentServices(response: PickServiceModel.Fetch.Response) {
-        if response.isError{
+        if !response.isError{
             let viewModel = PickServiceModel.Fetch.ViewModel(services: response.services, isError: response.isError, message: nil)
             output.successFetchedServices(viewModel: viewModel)
         }else{
