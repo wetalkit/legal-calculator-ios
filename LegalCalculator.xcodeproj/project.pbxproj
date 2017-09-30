@@ -1,0 +1,642 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5CE222A50F04DEEB9D2A3ED3 /* Pods_LegalCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86348534181791D9CB676E85 /* Pods_LegalCalculator.framework */; };
+		A077D62B1F7F9484006AB335 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A077D62A1F7F9484006AB335 /* AppDelegate.swift */; };
+		A077D62D1F7F9484006AB335 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A077D62C1F7F9484006AB335 /* ViewController.swift */; };
+		A077D6301F7F9484006AB335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A077D62E1F7F9484006AB335 /* Main.storyboard */; };
+		A077D6321F7F9484006AB335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A077D6311F7F9484006AB335 /* Assets.xcassets */; };
+		A077D6351F7F9484006AB335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A077D6331F7F9484006AB335 /* LaunchScreen.storyboard */; };
+		A077D6401F7F9485006AB335 /* LegalCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A077D63F1F7F9485006AB335 /* LegalCalculatorTests.swift */; };
+		A077D64B1F7F9485006AB335 /* LegalCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A077D64A1F7F9485006AB335 /* LegalCalculatorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A077D63C1F7F9485006AB335 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A077D61F1F7F9484006AB335 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A077D6261F7F9484006AB335;
+			remoteInfo = LegalCalculator;
+		};
+		A077D6471F7F9485006AB335 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A077D61F1F7F9484006AB335 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A077D6261F7F9484006AB335;
+			remoteInfo = LegalCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		77A96E738F3DE2317050A353 /* Pods-LegalCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegalCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LegalCalculator/Pods-LegalCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		86348534181791D9CB676E85 /* Pods_LegalCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LegalCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8930AFBE787B36129DD024D1 /* Pods-LegalCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegalCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-LegalCalculator/Pods-LegalCalculator.release.xcconfig"; sourceTree = "<group>"; };
+		A077D6271F7F9484006AB335 /* LegalCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegalCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A077D62A1F7F9484006AB335 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A077D62C1F7F9484006AB335 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A077D62F1F7F9484006AB335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A077D6311F7F9484006AB335 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A077D6341F7F9484006AB335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A077D6361F7F9484006AB335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A077D63B1F7F9485006AB335 /* LegalCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LegalCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A077D63F1F7F9485006AB335 /* LegalCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalCalculatorTests.swift; sourceTree = "<group>"; };
+		A077D6411F7F9485006AB335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A077D6461F7F9485006AB335 /* LegalCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LegalCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A077D64A1F7F9485006AB335 /* LegalCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalCalculatorUITests.swift; sourceTree = "<group>"; };
+		A077D64C1F7F9485006AB335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A077D6241F7F9484006AB335 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE222A50F04DEEB9D2A3ED3 /* Pods_LegalCalculator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A077D6381F7F9485006AB335 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A077D6431F7F9485006AB335 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A0664CD0B7BFDDE26E5CDAA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77A96E738F3DE2317050A353 /* Pods-LegalCalculator.debug.xcconfig */,
+				8930AFBE787B36129DD024D1 /* Pods-LegalCalculator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A077D61E1F7F9484006AB335 = {
+			isa = PBXGroup;
+			children = (
+				A077D6291F7F9484006AB335 /* LegalCalculator */,
+				A077D63E1F7F9485006AB335 /* LegalCalculatorTests */,
+				A077D6491F7F9485006AB335 /* LegalCalculatorUITests */,
+				A077D6281F7F9484006AB335 /* Products */,
+				A0664CD0B7BFDDE26E5CDAA1 /* Pods */,
+				B1A1EE90D1B849BA61066BBC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A077D6281F7F9484006AB335 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A077D6271F7F9484006AB335 /* LegalCalculator.app */,
+				A077D63B1F7F9485006AB335 /* LegalCalculatorTests.xctest */,
+				A077D6461F7F9485006AB335 /* LegalCalculatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A077D6291F7F9484006AB335 /* LegalCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				A077D62A1F7F9484006AB335 /* AppDelegate.swift */,
+				A077D62C1F7F9484006AB335 /* ViewController.swift */,
+				A077D62E1F7F9484006AB335 /* Main.storyboard */,
+				A077D6311F7F9484006AB335 /* Assets.xcassets */,
+				A077D6331F7F9484006AB335 /* LaunchScreen.storyboard */,
+				A077D6361F7F9484006AB335 /* Info.plist */,
+			);
+			path = LegalCalculator;
+			sourceTree = "<group>";
+		};
+		A077D63E1F7F9485006AB335 /* LegalCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				A077D63F1F7F9485006AB335 /* LegalCalculatorTests.swift */,
+				A077D6411F7F9485006AB335 /* Info.plist */,
+			);
+			path = LegalCalculatorTests;
+			sourceTree = "<group>";
+		};
+		A077D6491F7F9485006AB335 /* LegalCalculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A077D64A1F7F9485006AB335 /* LegalCalculatorUITests.swift */,
+				A077D64C1F7F9485006AB335 /* Info.plist */,
+			);
+			path = LegalCalculatorUITests;
+			sourceTree = "<group>";
+		};
+		B1A1EE90D1B849BA61066BBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86348534181791D9CB676E85 /* Pods_LegalCalculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A077D6261F7F9484006AB335 /* LegalCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A077D64F1F7F9485006AB335 /* Build configuration list for PBXNativeTarget "LegalCalculator" */;
+			buildPhases = (
+				EF3C0774C6DF4A4B8EA8C31A /* [CP] Check Pods Manifest.lock */,
+				A077D6231F7F9484006AB335 /* Sources */,
+				A077D6241F7F9484006AB335 /* Frameworks */,
+				A077D6251F7F9484006AB335 /* Resources */,
+				E95A1B267FF78F13ACF3A3B4 /* [CP] Embed Pods Frameworks */,
+				1F75924D6AF3AB7CF549196D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LegalCalculator;
+			productName = LegalCalculator;
+			productReference = A077D6271F7F9484006AB335 /* LegalCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A077D63A1F7F9485006AB335 /* LegalCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A077D6521F7F9485006AB335 /* Build configuration list for PBXNativeTarget "LegalCalculatorTests" */;
+			buildPhases = (
+				A077D6371F7F9485006AB335 /* Sources */,
+				A077D6381F7F9485006AB335 /* Frameworks */,
+				A077D6391F7F9485006AB335 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A077D63D1F7F9485006AB335 /* PBXTargetDependency */,
+			);
+			name = LegalCalculatorTests;
+			productName = LegalCalculatorTests;
+			productReference = A077D63B1F7F9485006AB335 /* LegalCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A077D6451F7F9485006AB335 /* LegalCalculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A077D6551F7F9485006AB335 /* Build configuration list for PBXNativeTarget "LegalCalculatorUITests" */;
+			buildPhases = (
+				A077D6421F7F9485006AB335 /* Sources */,
+				A077D6431F7F9485006AB335 /* Frameworks */,
+				A077D6441F7F9485006AB335 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A077D6481F7F9485006AB335 /* PBXTargetDependency */,
+			);
+			name = LegalCalculatorUITests;
+			productName = LegalCalculatorUITests;
+			productReference = A077D6461F7F9485006AB335 /* LegalCalculatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A077D61F1F7F9484006AB335 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Dejan Atanasov";
+				TargetAttributes = {
+					A077D6261F7F9484006AB335 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					A077D63A1F7F9485006AB335 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A077D6261F7F9484006AB335;
+					};
+					A077D6451F7F9485006AB335 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A077D6261F7F9484006AB335;
+					};
+				};
+			};
+			buildConfigurationList = A077D6221F7F9484006AB335 /* Build configuration list for PBXProject "LegalCalculator" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A077D61E1F7F9484006AB335;
+			productRefGroup = A077D6281F7F9484006AB335 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A077D6261F7F9484006AB335 /* LegalCalculator */,
+				A077D63A1F7F9485006AB335 /* LegalCalculatorTests */,
+				A077D6451F7F9485006AB335 /* LegalCalculatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A077D6251F7F9484006AB335 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A077D6351F7F9484006AB335 /* LaunchScreen.storyboard in Resources */,
+				A077D6321F7F9484006AB335 /* Assets.xcassets in Resources */,
+				A077D6301F7F9484006AB335 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A077D6391F7F9485006AB335 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A077D6441F7F9485006AB335 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F75924D6AF3AB7CF549196D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LegalCalculator/Pods-LegalCalculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E95A1B267FF78F13ACF3A3B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LegalCalculator/Pods-LegalCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF3C0774C6DF4A4B8EA8C31A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A077D6231F7F9484006AB335 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A077D62D1F7F9484006AB335 /* ViewController.swift in Sources */,
+				A077D62B1F7F9484006AB335 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A077D6371F7F9485006AB335 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A077D6401F7F9485006AB335 /* LegalCalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A077D6421F7F9485006AB335 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A077D64B1F7F9485006AB335 /* LegalCalculatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A077D63D1F7F9485006AB335 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A077D6261F7F9484006AB335 /* LegalCalculator */;
+			targetProxy = A077D63C1F7F9485006AB335 /* PBXContainerItemProxy */;
+		};
+		A077D6481F7F9485006AB335 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A077D6261F7F9484006AB335 /* LegalCalculator */;
+			targetProxy = A077D6471F7F9485006AB335 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A077D62E1F7F9484006AB335 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A077D62F1F7F9484006AB335 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A077D6331F7F9484006AB335 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A077D6341F7F9484006AB335 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A077D64D1F7F9485006AB335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A077D64E1F7F9485006AB335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A077D6501F7F9485006AB335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77A96E738F3DE2317050A353 /* Pods-LegalCalculator.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S4KQXDBMWD;
+				INFOPLIST_FILE = LegalCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = legal.calculator.LegalCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A077D6511F7F9485006AB335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8930AFBE787B36129DD024D1 /* Pods-LegalCalculator.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S4KQXDBMWD;
+				INFOPLIST_FILE = LegalCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = legal.calculator.LegalCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A077D6531F7F9485006AB335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S4KQXDBMWD;
+				INFOPLIST_FILE = LegalCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = legal.calculator.LegalCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LegalCalculator.app/LegalCalculator";
+			};
+			name = Debug;
+		};
+		A077D6541F7F9485006AB335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S4KQXDBMWD;
+				INFOPLIST_FILE = LegalCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = legal.calculator.LegalCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LegalCalculator.app/LegalCalculator";
+			};
+			name = Release;
+		};
+		A077D6561F7F9485006AB335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S4KQXDBMWD;
+				INFOPLIST_FILE = LegalCalculatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = legal.calculator.LegalCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LegalCalculator;
+			};
+			name = Debug;
+		};
+		A077D6571F7F9485006AB335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S4KQXDBMWD;
+				INFOPLIST_FILE = LegalCalculatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = legal.calculator.LegalCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LegalCalculator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A077D6221F7F9484006AB335 /* Build configuration list for PBXProject "LegalCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A077D64D1F7F9485006AB335 /* Debug */,
+				A077D64E1F7F9485006AB335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A077D64F1F7F9485006AB335 /* Build configuration list for PBXNativeTarget "LegalCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A077D6501F7F9485006AB335 /* Debug */,
+				A077D6511F7F9485006AB335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A077D6521F7F9485006AB335 /* Build configuration list for PBXNativeTarget "LegalCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A077D6531F7F9485006AB335 /* Debug */,
+				A077D6541F7F9485006AB335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A077D6551F7F9485006AB335 /* Build configuration list for PBXNativeTarget "LegalCalculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A077D6561F7F9485006AB335 /* Debug */,
+				A077D6571F7F9485006AB335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A077D61F1F7F9484006AB335 /* Project object */;
+}
