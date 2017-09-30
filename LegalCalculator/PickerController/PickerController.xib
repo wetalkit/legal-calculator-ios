@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFDisplay-Medium.otf">
+            <string>SFUIDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PickerController" customModule="LegalCalculator" customModuleProvider="target">
+            <connections>
+                <outlet property="actionButton" destination="zyU-Hn-WBi" id="OHF-mw-Cbq"/>
+                <outlet property="containerView" destination="BY2-hf-ibz" id="NZ6-GT-FG1"/>
+                <outlet property="pickerBottomConstraint" destination="9hc-Ex-TUS" id="n8X-NQ-ppl"/>
+                <outlet property="titleLabel" destination="aiE-JO-cb7" id="2An-dZ-hLL"/>
+                <outlet property="view" destination="iN0-l3-epB" id="qRI-OM-NMj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BY2-hf-ibz">
+                    <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                    <color key="backgroundColor" red="0.14901960784313725" green="0.17254901960784313" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="750" constant="216" id="8MT-XH-NT8"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2N-zG-ES0" userLabel="Button View">
+                    <rect key="frame" x="0.0" y="401" width="375" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyU-Hn-WBi">
+                            <rect key="frame" x="275" y="0.0" width="100" height="50"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="EPQ-As-5Bv"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="16"/>
+                            <state key="normal" title="Done">
+                                <color key="titleColor" red="1" green="0.70196078429999997" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiE-JO-cb7">
+                            <rect key="frame" x="275" y="0.0" width="0.0" height="50"/>
+                            <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.29411764705882354" green="0.31372549019607843" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="zyU-Hn-WBi" secondAttribute="trailing" id="8Vg-Er-gX4"/>
+                        <constraint firstItem="zyU-Hn-WBi" firstAttribute="leading" secondItem="aiE-JO-cb7" secondAttribute="trailing" id="Caf-QS-hkT"/>
+                        <constraint firstAttribute="bottom" secondItem="aiE-JO-cb7" secondAttribute="bottom" id="KgO-uf-DtO"/>
+                        <constraint firstAttribute="bottom" secondItem="zyU-Hn-WBi" secondAttribute="bottom" id="Ogd-Hn-bbK"/>
+                        <constraint firstItem="aiE-JO-cb7" firstAttribute="top" secondItem="k2N-zG-ES0" secondAttribute="top" id="aPn-xB-3Uu"/>
+                        <constraint firstAttribute="height" constant="50" id="iUg-tg-avb"/>
+                        <constraint firstItem="zyU-Hn-WBi" firstAttribute="top" secondItem="k2N-zG-ES0" secondAttribute="top" id="rfZ-H5-OdO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="BY2-hf-ibz" secondAttribute="bottom" id="9hc-Ex-TUS"/>
+                <constraint firstItem="BY2-hf-ibz" firstAttribute="top" secondItem="k2N-zG-ES0" secondAttribute="bottom" id="DGC-NL-pQu"/>
+                <constraint firstAttribute="trailing" secondItem="BY2-hf-ibz" secondAttribute="trailing" id="KNz-Ef-Fb4"/>
+                <constraint firstItem="k2N-zG-ES0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TSf-Ef-8Mu"/>
+                <constraint firstItem="BY2-hf-ibz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WnW-nq-krZ"/>
+                <constraint firstAttribute="trailing" secondItem="k2N-zG-ES0" secondAttribute="trailing" id="ufO-HP-3OH"/>
+            </constraints>
+            <point key="canvasLocation" x="527.5" y="322.5"/>
+        </view>
+    </objects>
+</document>
