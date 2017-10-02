@@ -24,7 +24,7 @@ class Request {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true;
         
         let url = getUrl(endUrl: endUrl)
-        
+
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Content-type" : "application/json"

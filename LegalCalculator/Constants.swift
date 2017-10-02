@@ -12,5 +12,6 @@ import Foundation
 struct API {
     static let BASE_URL = "http://pravenkalkulator.mk/"
     static let SERVICES = "procedures"
+    static let CALCULATE = "calculate"
 
 }

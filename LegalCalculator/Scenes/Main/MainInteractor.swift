@@ -11,12 +11,12 @@ import Foundation
 
 protocol MainInteractorInput
 {
-//    func fetchItems(request: TestModel.Fetch.Request)
+    func calculate(request: MainModel.Calculate.Request)
 }
 
 protocol MainInteractorOutput
 {
-//    func presentFetchResults(response: TestModel.Fetch.Response);
+    func presentCalculatedResults(response: MainModel.Calculate.Response);
 }
 
 class MainInteractor : MainInteractorInput
@@ -25,15 +25,17 @@ class MainInteractor : MainInteractorInput
     var output: MainInteractorOutput!
     var worker: MainWorker!
     
-    func fetchItems(request: MainModel.Fetch.Request) {
-        if request.itemId == nil || request.count == nil || request.keyword == nil {
-//            return output.presentFetchResults(response: MainModel.Fetch.Response(object: nil,isError: true, message: "Fields may not be empty."))
+    func calculate(request: MainModel.Calculate.Request) {
+        guard let params = request.params else {
+            output.presentCalculatedResults(response: MainModel.Calculate.Response(baseCost: nil,isError: true, message: "Fields may not be empty."))
+            return
         }
+
         worker = MainWorker()
-//        worker.fetch(name: request.name, type: request.type, count: request.count, success: { (object) in
-//            self.output.presentFetchResults(response: MainModel.Fetch.Response(object: object, isError: false, message: nil))
-//        }) { (error, message) in
-//            self.output.presentFetchResults(response: MainModel.Fetch.Response(object: nil, isError: true, message: message))
-//        }
+        worker.calculate(params: params, success: { (response) in
+            self.output.presentCalculatedResults(response: response)
+        }) { (error) in
+            self.output.presentCalculatedResults(response: error)
+        }
     }
 }

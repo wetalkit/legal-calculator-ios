@@ -15,7 +15,7 @@ protocol MainControllerInput
 
 protocol MainControllerOutput
 {
-//    func fetchItems(request: TestModel.Fetch.Request)
+    func calculate(request: MainModel.Calculate.Request)
 }
 
 class MainController: BaseController {
@@ -25,9 +25,13 @@ class MainController: BaseController {
     
     //MARK: - Private Properties
     @IBOutlet fileprivate weak var mainTableView: UITableView!
+    @IBOutlet fileprivate weak var moreOptionsBtn: UIButton!
+    @IBOutlet fileprivate weak var moreOptionsHeight: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var otherServicesView: OtherServicesView!
 
-//    fileprivate let cells: [MainCellType] = [.input, .input, .dropdown, .input, .dropdown, .dropdown, .button]
-    
+    fileprivate var firstRowHeight: CGFloat = 0
+    fileprivate var params: [String : Any] = [String : Any]()
+
     // MARK: - Object lifecycle
     override func awakeFromNib(){
         super.awakeFromNib()
@@ -45,10 +49,23 @@ class MainController: BaseController {
     override func keyboardHidden() {
         mainTableView.keyboardClosed()
     }
+    
+    func successCalculation(viewModel: MainModel.Calculate.ViewModel) {
+        otherServicesView.baseCost = viewModel.baseCost
+        onMoreOptionsButton(btn: moreOptionsBtn)
+    }
+    func errorCalculation(viewModel: MainModel.Calculate.ViewModel) {
+        
+    }
 }
 extension MainController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 0{
+            firstRowHeight = cell.height()
+        }
     }
 }
 extension MainController: UITableViewDataSource{
@@ -59,32 +76,34 @@ extension MainController: UITableViewDataSource{
         return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let input = service.inputs?[indexPath.row], let type = input.type else {return UITableViewCell()}
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: type.cellType().cellReuseIdentifier()) as! BaseCell
-        cell.type = type
+        guard let inputs = service.inputs else {return UITableViewCell()}
+        
+        let input = inputs[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: input.type!.cellType().cellReuseIdentifier()) as! BaseCell
+        cell.type = input.type
         cell.updateCellWithInput(input: input)
 
-        if type == .dropdown{
+        if input.type == .dropdown{
             let c = cell as! DropdownCell
             c.onDropdownBlock = { [weak self] (options) in
                 guard let s = self else {return}
                 s.showPickerController(pickerOptions: options, selectedIndex: { (index) in
                     let str = options[index]
                     c.setPickedItem(text: str)
-                    print(str)
+                    s.params[input.varValue] = str
                 })
             }
-        }else if type == .input{
+        }else if input.type == .input{
             let c = cell as! InputCell
-            c.textBlock = { (text) in
-                print(text)
-            }
-        }else if type == .button{
-            let c = cell as! ButtonCell
-            c.onActionBlock = { [weak self] in
+            c.textBlock = { [weak self] (text) in
                 guard let s = self else {return}
-                
+                if text.characters.count == 0{
+                    s.params.removeValue(forKey: input.varValue)
+                }else{
+                    s.params[input.varValue] = text
+                }
             }
         }
         return cell
@@ -94,11 +113,37 @@ extension MainController: UITableViewDataSource{
 private extension MainController{
     func setupUI(){
         navigationController?.navigationBar.topItem?.title = ""
-        navigationController?.navigationBar.barTintColor = UIColor.white
-        title = service.title
-        mainTableView.reloadData()
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.themeBlue()
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedStringKey.foregroundColor : UIColor.white
+        ]
 
+        title = service.title
         registerCells()
+        params["procedure_id"] = service.id
+    }
+    
+    @IBAction func onCalculateButton(btn: UIButton){
+        output.calculate(request: MainModel.Calculate.Request(params: params))
+    }
+
+    @IBAction func onMoreOptionsButton(btn: UIButton){
+        btn.isSelected = !btn.isSelected
+        
+        if btn.isSelected{
+            moreOptionsHeight.constant =  view.frame.height - (mainTableView.y() + firstRowHeight)
+        }else{
+            moreOptionsHeight.constant = 90
+        }
+        
+        otherServicesView.alpha = btn.isSelected ? 0 : 1
+        
+        UIView.animate(withDuration: 0.3, animations: ({
+            self.otherServicesView.alpha = btn.isSelected ? 1 : 0
+            self.moreOptionsBtn.transform = self.moreOptionsBtn.transform.rotated(by: CGFloat(Double.pi))
+            self.view.layoutSubviews()
+        }))
     }
     
     func registerCells(){
@@ -109,7 +154,7 @@ private extension MainController{
                 }
             }
         }
+        mainTableView.registerNibForCellClass(ButtonCell.self)
     }
-    
 }
 

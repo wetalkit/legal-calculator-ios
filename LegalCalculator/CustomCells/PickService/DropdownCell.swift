@@ -12,6 +12,9 @@ class DropdownCell: BaseCell {
 
     //MARK: - Private Properties
     @IBOutlet fileprivate weak var dropdownBtn: UIButton!
+    @IBOutlet fileprivate weak var titleLbl: UILabel!
+
+    fileprivate var options: [String]?
     
     //MARK: - Internal Properties
     var onDropdownBlock: (([String]) -> ())?
@@ -24,10 +27,16 @@ class DropdownCell: BaseCell {
         dropdownBtn.setTitle(text, for: .normal)
     }
     
-    override func updateCellWithInput(input: Inputs) {
-        
+    override func updateCellWithInput(input: Input) {
+        options = input.attributes?.options
+        titleLbl.text = input.name
+        dropdownBtn.setTitle(input.attributes?.placeholder, for: .normal)
+        dropdownBtn.titleLabel?.adjustsFontSizeToFitWidth = true
     }
+    
     @IBAction func onDropdownButton(btn: UIButton){
-        onDropdownBlock?(["1", "2", "3", "4", "5"])
+        if let o = options{
+            onDropdownBlock?(o)
+        }
     }
 }

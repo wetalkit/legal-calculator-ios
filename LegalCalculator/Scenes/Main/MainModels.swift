@@ -9,24 +9,20 @@
 import UIKit
 
 struct MainModel{
-    struct Fetch {
+    struct Calculate {
         struct Request
         {
-            var itemId = 0
-            var keyword: String?
-            var count: String?
+            var params: [String : Any]?
         }
         struct Response
         {
-//            var testObj: Test?
+            var baseCost: BaseCost?
             var isError: Bool
             var message: String?
         }
         struct ViewModel
         {
-            var name: String?
-            var date: String?
-            var desc: String?
+            var baseCost: BaseCost!
             var isError: Bool
             var message: String?
         }

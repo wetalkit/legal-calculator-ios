@@ -9,22 +9,19 @@
 import Foundation
 
 
-typealias mainResponseHandler = (_ response: MainModel.Fetch.Response) ->()
+typealias mainResponseHandler = (_ response: MainModel.Calculate.Response) ->()
 
 class MainWorker{
     
-    func fetch(itemId:Int!, keyword:String!, count: String!, success:@escaping(mainResponseHandler), fail:@escaping(mainResponseHandler))
+    func calculate(params: [String : Any], success:@escaping(mainResponseHandler), fail:@escaping(mainResponseHandler))
     {
-        // NOTE: Do the work
-        //call network etc.
         let manager = APIManager()
-        
-//        manager.fetch(itemId: itemId, keyword: keyword, count: count, success: { (data) in
-//            let test = Test(JSON: data)
-//            success(TestModel.Fetch.Response(testObj: test, isError: false, message:nil))
-//        }) { (error, message) in
-//            fail(TestModel.Fetch.Response(testObj: nil, isError: true, message: message))
-//        }
+        manager.calculate(params: params, onCompletion: { (response) in
+            let cost = BaseCost(json: response)
+            success(MainModel.Calculate.Response(baseCost: cost, isError: false, message:nil))
+        }) { (error) in
+            success(MainModel.Calculate.Response(baseCost: nil, isError: true, message:"Something went wrong"))
+        }
     }
 }
 

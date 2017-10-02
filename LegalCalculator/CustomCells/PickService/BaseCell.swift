@@ -17,7 +17,7 @@ class BaseCell: UITableViewCell {
         // Initialization code
     }
 
-    func updateCellWithInput(input: Inputs){}
+    func updateCellWithInput(input: Input){}
 
     
 }

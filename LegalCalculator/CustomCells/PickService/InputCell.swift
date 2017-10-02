@@ -26,7 +26,7 @@ class InputCell: BaseCell {
             textBlock?(text)
         }
     }
-    override func updateCellWithInput(input: Inputs) {
+    override func updateCellWithInput(input: Input) {
         titleLbl.text = input.name
     }
 }

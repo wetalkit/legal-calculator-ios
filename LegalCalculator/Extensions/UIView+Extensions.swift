@@ -27,6 +27,17 @@ extension UIView {
         }
     }
     
+    @IBInspectable var makeRounded: Bool {
+        set (rounded) {
+            if rounded{
+                layer.cornerRadius = width()/2
+                layer.masksToBounds = true
+            }
+        } get {
+            return false
+        }
+    }
+
     @IBInspectable var borderColor: UIColor {
         set (color) {
             layer.borderWidth = 1
