@@ -19,8 +19,8 @@ class DropdownCell: BaseCell {
     //MARK: - Internal Properties
     var onDropdownBlock: (([String]) -> ())?
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func setValue(value: Any) {
+        setTitle(title: "\(value)")
     }
     
     func setPickedItem(text: String){
@@ -30,10 +30,13 @@ class DropdownCell: BaseCell {
     override func updateCellWithInput(input: Input) {
         options = input.attributes?.options
         titleLbl.text = input.name
-        dropdownBtn.setTitle(input.attributes?.placeholder, for: .normal)
-        dropdownBtn.titleLabel?.adjustsFontSizeToFitWidth = true
+        setTitle(title: input.attributes?.placeholder ?? "")
     }
     
+    func setTitle(title: String){
+        dropdownBtn.setTitle(title, for: .normal)
+        dropdownBtn.titleLabel?.adjustsFontSizeToFitWidth = true
+    }
     @IBAction func onDropdownButton(btn: UIButton){
         if let o = options{
             onDropdownBlock?(o)

@@ -13,6 +13,8 @@ class OtherServicesView: NibView {
     //MARK: - Private Properties
     @IBOutlet fileprivate weak var mainTableView: UITableView!
 
+    fileprivate let headerHeight: CGFloat = 40
+    
     //MARK: - Internal Properties
     var baseCost: BaseCost?{
         didSet{
@@ -59,10 +61,10 @@ extension OtherServicesView: UITableViewDataSource{
         guard let costs = baseCost?.costs else {return nil}
         let cost = costs[section]
 
-        let v = UIView(frame: CGRect.init(x: 0, y: 0, width: tableView.width(), height: 40))
+        let v = UIView(frame: CGRect.init(x: 0, y: 0, width: tableView.width(), height: headerHeight))
         v.backgroundColor = UIColor.background()
         
-        let lbl = UILabel(frame: CGRect.init(x: 20, y: 0, width: tableView.width() - 40, height: v.height()))
+        let lbl = UILabel(frame: CGRect.init(x: 20, y: 0, width: tableView.width() - headerHeight, height: v.height()))
         lbl.text = cost.descriptionValue
         lbl.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         lbl.textColor = UIColor.otherServicesHeader()
@@ -70,7 +72,7 @@ extension OtherServicesView: UITableViewDataSource{
         return v
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return isLastIndex(index: section) ? 0 : 40
+        return isLastIndex(index: section) ? 0 : headerHeight
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
@@ -78,17 +80,29 @@ extension OtherServicesView: UITableViewDataSource{
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        print(indexPath.section);
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if isLastIndex(index: indexPath.section){
             let cell = tableView.dequeueReusableCell(withIdentifier: TotalCell.cellReuseIdentifier()) as! TotalCell
-            cell.updateCellWith(total: "\(baseCost?.total ?? 0) МКД")
+            let totalMin = baseCost?.totalMin.stringWithSepator ?? ""
+            let totalMax = baseCost?.totalMax.stringWithSepator ?? ""
+            let total = baseCost?.total.stringWithSepator ?? ""
+            var totalStr = ""
+
+            if totalMin == totalMax{
+                totalStr = "\(total) МКД"
+            }else{
+                totalStr = "\(totalMin) - \(totalMax) МКД"
+            }
+
+            cell.updateCellWith(total: totalStr)
+
+            
             return cell
         }
         
         guard let costs = baseCost?.costs, let subCosts = costs[indexPath.section].costs else {return UITableViewCell()}
-        print(subCosts[indexPath.row].dictionaryRepresentation());
-
         let cell = tableView.dequeueReusableCell(withIdentifier: CostCell.cellReuseIdentifier()) as! CostCell
         cell.updateCellWithCost(cost: subCosts[indexPath.row])
         return cell

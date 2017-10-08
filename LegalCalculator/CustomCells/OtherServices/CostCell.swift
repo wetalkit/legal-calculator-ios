@@ -20,10 +20,7 @@ class CostCell: UITableViewCell {
     }
     
     func updateCellWithCost(cost: Costs){
-        print(cost.name)
-        print(cost.cost)
-        
         nameLbl.text = cost.name
-        costLbl.text = "\(cost.cost) МКД"
-    }    
+        costLbl.text = "\(cost.cost.stringWithSepator) МКД"
+    }
 }

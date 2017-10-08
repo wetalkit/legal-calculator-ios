@@ -18,7 +18,7 @@ public final class Service: NSCoding {
   }
 
   // MARK: Properties
-  public var inputs: [Input]?
+  public var inputs: [InputSection]!
   public var title: String?
   public var id: Int = 0
 
@@ -35,7 +35,18 @@ public final class Service: NSCoding {
   ///
   /// - parameter json: JSON object from SwiftyJSON.
   public required init(json: JSON){
-    if let items = json[SerializationKeys.inputs].array { inputs = items.map { Input(json: $0) } }
+    if let items = json[SerializationKeys.inputs].array {
+        inputs = [InputSection]()
+        let tmpInputs = items.map { Input(json: $0) }
+        let mandatory = tmpInputs.filter {$0.isMandatory == 1}
+        let optionals = tmpInputs.filter {$0.isMandatory == 0}
+        let mInput = InputSection(type: .mandatory, inputs: mandatory)
+        let oInput = InputSection(type: .optional, inputs: optionals)
+        inputs?.append(mInput)
+        inputs?.append(oInput)
+    }else{
+        inputs = [InputSection]()
+    }
     title = json[SerializationKeys.title].string
     id = json[SerializationKeys.id].intValue
   }
@@ -45,7 +56,7 @@ public final class Service: NSCoding {
   /// - returns: A Key value pair containing all valid values in the object.
   public func dictionaryRepresentation() -> [String: Any] {
     var dictionary: [String: Any] = [:]
-    if let value = inputs { dictionary[SerializationKeys.inputs] = value.map { $0.dictionaryRepresentation() } }
+//    if let value = inputs { dictionary[SerializationKeys.inputs] = value.map { $0.dictionaryRepresentation() } }
     if let value = title { dictionary[SerializationKeys.title] = value }
     dictionary[SerializationKeys.id] = id
 
@@ -54,7 +65,7 @@ public final class Service: NSCoding {
 
   // MARK: NSCoding Protocol
   required public init(coder aDecoder: NSCoder) {
-    self.inputs = aDecoder.decodeObject(forKey: SerializationKeys.inputs) as? [Input]
+    self.inputs = aDecoder.decodeObject(forKey: SerializationKeys.inputs) as? [InputSection]
     self.title = aDecoder.decodeObject(forKey: SerializationKeys.title) as? String
     self.id = aDecoder.decodeObject(forKey: SerializationKeys.id) as! Int
   }

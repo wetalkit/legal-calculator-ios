@@ -15,12 +15,16 @@ public final class BaseCost: NSCoding {
     private struct SerializationKeys {
         static let costs = "costs"
         static let total = "total"
+        static let totalMax = "total_max"
+        static let totalMin = "total_min"
     }
     
     // MARK: Properties
     public var costs: [Cost]?
     public var total: Int = 0
-    
+    public var totalMax: Int = 0
+    public var totalMin: Int = 0
+
     // MARK: SwiftyJSON Initializers
     /// Initiates the instance based on the object.
     ///
@@ -35,6 +39,8 @@ public final class BaseCost: NSCoding {
     /// - parameter json: JSON object from SwiftyJSON.
     public required init(json: JSON) {
         total = json[SerializationKeys.total].intValue
+        totalMax = json[SerializationKeys.totalMax].intValue
+        totalMin = json[SerializationKeys.totalMin].intValue
         if let items = json[SerializationKeys.costs].array { costs = items.map { Cost(json: $0) } }
     }
     
@@ -45,6 +51,9 @@ public final class BaseCost: NSCoding {
         var dictionary: [String: Any] = [:]
         if let value = costs { dictionary[SerializationKeys.costs] = value.map { $0.dictionaryRepresentation() } }
         dictionary[SerializationKeys.total] = total
+        dictionary[SerializationKeys.totalMax] = totalMax
+        dictionary[SerializationKeys.totalMin] = totalMin
+
         return dictionary
     }
     
@@ -52,11 +61,17 @@ public final class BaseCost: NSCoding {
     required public init(coder aDecoder: NSCoder) {
         self.costs = aDecoder.decodeObject(forKey: SerializationKeys.costs) as? [Cost]
         self.total = aDecoder.decodeObject(forKey: SerializationKeys.total) as! Int
+        self.totalMax = aDecoder.decodeObject(forKey: SerializationKeys.totalMax) as! Int
+        self.totalMin = aDecoder.decodeObject(forKey: SerializationKeys.totalMin) as! Int
+
     }
     
     public func encode(with aCoder: NSCoder) {
         aCoder.encode(costs, forKey: SerializationKeys.costs)
         aCoder.encode(total, forKey: SerializationKeys.total)
+        aCoder.encode(totalMax, forKey: SerializationKeys.totalMax)
+        aCoder.encode(totalMin, forKey: SerializationKeys.totalMin)
+
     }
     
 }
