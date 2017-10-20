@@ -87,7 +87,7 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwa-Ws-djF">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1.5"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="bTj-yY-Y7Q"/>
                                         </constraints>
@@ -156,6 +156,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QeY-uO-n36"/>
                     <connections>
+                        <outlet property="calculateBtn" destination="58n-Js-5HI" id="b4T-yr-tiz"/>
                         <outlet property="mainTableView" destination="G3J-vC-9bi" id="Kcy-De-uV4"/>
                         <outlet property="moreOptionsBtn" destination="KM6-rw-Jjx" id="68i-80-6ZL"/>
                         <outlet property="moreOptionsHeight" destination="5Zm-QV-89l" id="uDr-kN-mEf"/>

@@ -39,7 +39,7 @@ class PickServiceController: BaseController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        title = "Pick Service"
+        title = "Избери Услуга"
     }
     
     func successFetchedServices(viewModel: PickServiceModel.Fetch.ViewModel) {
@@ -76,7 +76,6 @@ extension PickServiceController: UITableViewDataSource{
 private extension PickServiceController{
     func setupUI(){
         output.fetchServices()
-        title = "Pick Service"
     }
 }
 

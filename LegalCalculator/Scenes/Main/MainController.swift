@@ -28,6 +28,7 @@ class MainController: BaseController {
     @IBOutlet fileprivate weak var moreOptionsBtn: UIButton!
     @IBOutlet fileprivate weak var moreOptionsHeight: NSLayoutConstraint!
     @IBOutlet fileprivate weak var otherServicesView: OtherServicesView!
+    @IBOutlet fileprivate weak var calculateBtn: UIButton!
 
     fileprivate var firstRowHeight: CGFloat = 0
     fileprivate var params: [String : Any] = [String : Any]()
@@ -138,6 +139,7 @@ private extension MainController{
     func setupUI(){
         navigationController?.navigationBar.topItem?.title = ""
         title = service.title
+        moreOptionsBtn.transform = moreOptionsBtn.transform.rotated(by: CGFloat(Double.pi))
         registerCells()
         defaultParams()
     }
@@ -184,7 +186,9 @@ private extension MainController{
         
         UIView.animate(withDuration: 0.3, animations: ({
             self.otherServicesView.alpha = btn.isSelected ? 1 : 0
+            self.calculateBtn.isHidden = btn.isSelected
             self.moreOptionsBtn.transform = self.moreOptionsBtn.transform.rotated(by: CGFloat(Double.pi))
+            self.mainTableView.isUserInteractionEnabled = !btn.isSelected
             self.view.layoutSubviews()
         }))
     }

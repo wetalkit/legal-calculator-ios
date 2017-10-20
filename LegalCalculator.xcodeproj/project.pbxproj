@@ -154,7 +154,7 @@
 		A0AA70871F7FA00E00B4E5EB /* InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
 		A0AA70881F7FA00E00B4E5EB /* InputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
 		A0AA70921F7FA6E700B4E5EB /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
-		A0AA70951F7FA7BC00B4E5EB /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		A0AA70951F7FA7BC00B4E5EB /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		A0AA70971F7FAB2500B4E5EB /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		A0AA709A1F7FAB6F00B4E5EB /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		A0AA709D1F7FAD7100B4E5EB /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
@@ -921,8 +921,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mk.pravenkalkulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5bf39533-a3ba-4343-93b5-3bdfe92f8d05";
-				PROVISIONING_PROFILE_SPECIFIER = PravenKalkulatorAdHoc;
+				PROVISIONING_PROFILE = "e78acff4-bbda-4f7e-b9ea-ad851a77ff78";
+				PROVISIONING_PROFILE_SPECIFIER = PravenKalkulatorAppStore;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

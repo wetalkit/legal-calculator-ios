@@ -22,9 +22,7 @@ class APIManager: Request {
         }
     }
     
-    func calculate(params: [String : Any], onCompletion: ((JSON) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
-        print("Params: \(params)")
-        
+    func calculate(params: [String : Any], onCompletion: ((JSON) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){        
         requestWith(endUrl: API.CALCULATE, method: .post, parameters: params, onCompletion: { (json) in
             if let j = json{
                 onCompletion?(j)

@@ -32,10 +32,7 @@ class Request {
         
         Alamofire.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { response in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false;
-            if let d = response.data{
-                let json = JSON(d)
-                print(json)
-            }
+
             switch response.result{
             case .success:
                 if let d = response.data{
