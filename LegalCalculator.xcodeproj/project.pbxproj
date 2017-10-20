@@ -8,12 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		5CE222A50F04DEEB9D2A3ED3 /* Pods_LegalCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86348534181791D9CB676E85 /* Pods_LegalCalculator.framework */; };
+		A02FFC6A1F8AAB5800EDC6EA /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02FFC691F8AAAFB00EDC6EA /* AlertHelper.swift */; };
+		A02FFC6D1F8AB1F000EDC6EA /* BottomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02FFC6C1F8AB1F000EDC6EA /* BottomTextField.swift */; };
 		A04D48C51F7FBDE500398D57 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48C31F7FBDE500398D57 /* ButtonCell.swift */; };
 		A04D48C61F7FBDE500398D57 /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04D48C41F7FBDE500398D57 /* ButtonCell.xib */; };
-		A04D48CD1F7FC95E00398D57 /* Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48CA1F7FC8B100398D57 /* Inputs.swift */; };
 		A04D48CE1F7FC96000398D57 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48CC1F7FC8B200398D57 /* Options.swift */; };
 		A04D48CF1F7FC96200398D57 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48C91F7FC8B100398D57 /* Services.swift */; };
 		A04D48D01F7FC96400398D57 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48CB1F7FC8B100398D57 /* Service.swift */; };
+		A04D48D31F8006C000398D57 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48D11F8006BF00398D57 /* Attributes.swift */; };
+		A04D48D41F8006C000398D57 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48D21F8006BF00398D57 /* Input.swift */; };
+		A04D48D91F80E66A00398D57 /* OtherServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48D81F80E66A00398D57 /* OtherServicesView.swift */; };
+		A04D48DB1F80E67200398D57 /* OtherServicesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04D48DA1F80E67200398D57 /* OtherServicesView.xib */; };
+		A04D48E01F80F90300398D57 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48DF1F80F90300398D57 /* UIColor+Extensions.swift */; };
+		A04D48E31F80FC5600398D57 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48E11F80FC4700398D57 /* NibView.swift */; };
+		A04D48E81F81004E00398D57 /* BaseCost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48E71F81004E00398D57 /* BaseCost.swift */; };
+		A04D48E91F81017D00398D57 /* Cost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48E61F80FF8A00398D57 /* Cost.swift */; };
+		A04D48EA1F81017F00398D57 /* Costs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48E51F80FF8A00398D57 /* Costs.swift */; };
+		A04D48EF1F81283800398D57 /* CostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48ED1F81283800398D57 /* CostCell.swift */; };
+		A04D48F01F81283800398D57 /* CostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04D48EE1F81283800398D57 /* CostCell.xib */; };
+		A04D48F31F8129CF00398D57 /* TotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D48F11F8129CF00398D57 /* TotalCell.swift */; };
+		A04D48F41F8129CF00398D57 /* TotalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04D48F21F8129CF00398D57 /* TotalCell.xib */; };
+		A05F1D061F88DF61005D1FCF /* InputSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F1D051F88DF61005D1FCF /* InputSection.swift */; };
+		A05F1D081F88E4B5005D1FCF /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F1D071F88E4B5005D1FCF /* Int+Extensions.swift */; };
 		A077D62B1F7F9484006AB335 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A077D62A1F7F9484006AB335 /* AppDelegate.swift */; };
 		A077D62D1F7F9484006AB335 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A077D62C1F7F9484006AB335 /* MainController.swift */; };
 		A077D6301F7F9484006AB335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A077D62E1F7F9484006AB335 /* Main.storyboard */; };
@@ -24,6 +40,7 @@
 		A077D6591F7F98A6006AB335 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A077D6581F7F98A6006AB335 /* Request.swift */; };
 		A077D65B1F7F98CC006AB335 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A077D65A1F7F98CC006AB335 /* Constants.swift */; };
 		A077D6601F7F9900006AB335 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A077D65F1F7F9900006AB335 /* APIManager.swift */; };
+		A07C68D21F83DE7100D72800 /* BaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C68D11F83DE7100D72800 /* BaseNavController.swift */; };
 		A08245E21F7FAEDA00443BDA /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08245E11F7FAEDA00443BDA /* BaseCell.swift */; };
 		A08245E51F7FAF2C00443BDA /* MainCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08245E41F7FAF2C00443BDA /* MainCellType.swift */; };
 		A08245ED1F7FB65600443BDA /* PickServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08245EC1F7FB65600443BDA /* PickServiceController.swift */; };
@@ -75,12 +92,28 @@
 		77A96E738F3DE2317050A353 /* Pods-LegalCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegalCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LegalCalculator/Pods-LegalCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		86348534181791D9CB676E85 /* Pods_LegalCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LegalCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8930AFBE787B36129DD024D1 /* Pods-LegalCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegalCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-LegalCalculator/Pods-LegalCalculator.release.xcconfig"; sourceTree = "<group>"; };
+		A02FFC691F8AAAFB00EDC6EA /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		A02FFC6C1F8AB1F000EDC6EA /* BottomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTextField.swift; sourceTree = "<group>"; };
 		A04D48C31F7FBDE500398D57 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		A04D48C41F7FBDE500398D57 /* ButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
 		A04D48C91F7FC8B100398D57 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		A04D48CA1F7FC8B100398D57 /* Inputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inputs.swift; sourceTree = "<group>"; };
 		A04D48CB1F7FC8B100398D57 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		A04D48CC1F7FC8B200398D57 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		A04D48D11F8006BF00398D57 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
+		A04D48D21F8006BF00398D57 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		A04D48D81F80E66A00398D57 /* OtherServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherServicesView.swift; sourceTree = "<group>"; };
+		A04D48DA1F80E67200398D57 /* OtherServicesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherServicesView.xib; sourceTree = "<group>"; };
+		A04D48DF1F80F90300398D57 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		A04D48E11F80FC4700398D57 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		A04D48E51F80FF8A00398D57 /* Costs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Costs.swift; sourceTree = "<group>"; };
+		A04D48E61F80FF8A00398D57 /* Cost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cost.swift; sourceTree = "<group>"; };
+		A04D48E71F81004E00398D57 /* BaseCost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCost.swift; sourceTree = "<group>"; };
+		A04D48ED1F81283800398D57 /* CostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostCell.swift; sourceTree = "<group>"; };
+		A04D48EE1F81283800398D57 /* CostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CostCell.xib; sourceTree = "<group>"; };
+		A04D48F11F8129CF00398D57 /* TotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCell.swift; sourceTree = "<group>"; };
+		A04D48F21F8129CF00398D57 /* TotalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalCell.xib; sourceTree = "<group>"; };
+		A05F1D051F88DF61005D1FCF /* InputSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSection.swift; sourceTree = "<group>"; };
+		A05F1D071F88E4B5005D1FCF /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		A077D6271F7F9484006AB335 /* LegalCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegalCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A077D62A1F7F9484006AB335 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A077D62C1F7F9484006AB335 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -97,6 +130,7 @@
 		A077D6581F7F98A6006AB335 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		A077D65A1F7F98CC006AB335 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A077D65F1F7F9900006AB335 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		A07C68D11F83DE7100D72800 /* BaseNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavController.swift; sourceTree = "<group>"; };
 		A08245E11F7FAEDA00443BDA /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		A08245E41F7FAF2C00443BDA /* MainCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellType.swift; sourceTree = "<group>"; };
 		A08245EC1F7FB65600443BDA /* PickServiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickServiceController.swift; sourceTree = "<group>"; };
@@ -120,7 +154,7 @@
 		A0AA70871F7FA00E00B4E5EB /* InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
 		A0AA70881F7FA00E00B4E5EB /* InputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
 		A0AA70921F7FA6E700B4E5EB /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
-		A0AA70951F7FA7BC00B4E5EB /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		A0AA70951F7FA7BC00B4E5EB /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		A0AA70971F7FAB2500B4E5EB /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		A0AA709A1F7FAB6F00B4E5EB /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		A0AA709D1F7FAD7100B4E5EB /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
@@ -153,9 +187,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A02FFC681F8AAAEB00EDC6EA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A02FFC691F8AAAFB00EDC6EA /* AlertHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A02FFC6B1F8AB1D400EDC6EA /* BottomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				A02FFC6C1F8AB1F000EDC6EA /* BottomTextField.swift */,
+			);
+			path = BottomTextField;
+			sourceTree = "<group>";
+		};
 		A04D48C71F7FC89D00398D57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A04D48E41F80FF8000398D57 /* Cost */,
 				A04D48C81F7FC8A700398D57 /* Service */,
 			);
 			path = Model;
@@ -164,12 +215,66 @@
 		A04D48C81F7FC8A700398D57 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				A04D48CA1F7FC8B100398D57 /* Inputs.swift */,
+				A04D48D11F8006BF00398D57 /* Attributes.swift */,
+				A04D48D21F8006BF00398D57 /* Input.swift */,
+				A05F1D051F88DF61005D1FCF /* InputSection.swift */,
 				A04D48CC1F7FC8B200398D57 /* Options.swift */,
 				A04D48C91F7FC8B100398D57 /* Services.swift */,
 				A04D48CB1F7FC8B100398D57 /* Service.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		A04D48D51F80139800398D57 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				A04D48D81F80E66A00398D57 /* OtherServicesView.swift */,
+				A04D48DA1F80E67200398D57 /* OtherServicesView.xib */,
+			);
+			path = FooterView;
+			sourceTree = "<group>";
+		};
+		A04D48E21F80FC4900398D57 /* NibView */ = {
+			isa = PBXGroup;
+			children = (
+				A04D48E11F80FC4700398D57 /* NibView.swift */,
+			);
+			path = NibView;
+			sourceTree = "<group>";
+		};
+		A04D48E41F80FF8000398D57 /* Cost */ = {
+			isa = PBXGroup;
+			children = (
+				A04D48E71F81004E00398D57 /* BaseCost.swift */,
+				A04D48E61F80FF8A00398D57 /* Cost.swift */,
+				A04D48E51F80FF8A00398D57 /* Costs.swift */,
+			);
+			path = Cost;
+			sourceTree = "<group>";
+		};
+		A04D48EB1F81280500398D57 /* OtherServices */ = {
+			isa = PBXGroup;
+			children = (
+				A04D48ED1F81283800398D57 /* CostCell.swift */,
+				A04D48EE1F81283800398D57 /* CostCell.xib */,
+				A04D48F11F8129CF00398D57 /* TotalCell.swift */,
+				A04D48F21F8129CF00398D57 /* TotalCell.xib */,
+			);
+			path = OtherServices;
+			sourceTree = "<group>";
+		};
+		A04D48EC1F81281A00398D57 /* PickService */ = {
+			isa = PBXGroup;
+			children = (
+				A08245E11F7FAEDA00443BDA /* BaseCell.swift */,
+				A0AA70831F7F9FFF00B4E5EB /* DropdownCell.swift */,
+				A0AA70841F7F9FFF00B4E5EB /* DropdownCell.xib */,
+				A0AA70871F7FA00E00B4E5EB /* InputCell.swift */,
+				A0AA70881F7FA00E00B4E5EB /* InputCell.xib */,
+				A04D48C31F7FBDE500398D57 /* ButtonCell.swift */,
+				A04D48C41F7FBDE500398D57 /* ButtonCell.xib */,
+			);
+			path = PickService;
 			sourceTree = "<group>";
 		};
 		A0664CD0B7BFDDE26E5CDAA1 /* Pods */ = {
@@ -216,6 +321,7 @@
 				A077D6311F7F9484006AB335 /* Assets.xcassets */,
 				A077D6331F7F9484006AB335 /* LaunchScreen.storyboard */,
 				A077D6361F7F9484006AB335 /* Info.plist */,
+				A02FFC681F8AAAEB00EDC6EA /* Helpers */,
 				A0AA70991F7FAB5900B4E5EB /* CustomViews */,
 				A0AA70911F7FA30C00B4E5EB /* PickerController */,
 				A0AA70821F7F9FED00B4E5EB /* CustomCells */,
@@ -321,6 +427,8 @@
 				A0AA70811F7F9FB200B4E5EB /* UITableViewCell+Extensions.swift */,
 				A0AA707F1F7F9FB200B4E5EB /* UIView+Extensions.swift */,
 				A0AA70971F7FAB2500B4E5EB /* UIViewController+Extensions.swift */,
+				A04D48DF1F80F90300398D57 /* UIColor+Extensions.swift */,
+				A05F1D071F88E4B5005D1FCF /* Int+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,13 +436,8 @@
 		A0AA70821F7F9FED00B4E5EB /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
-				A08245E11F7FAEDA00443BDA /* BaseCell.swift */,
-				A0AA70831F7F9FFF00B4E5EB /* DropdownCell.swift */,
-				A0AA70841F7F9FFF00B4E5EB /* DropdownCell.xib */,
-				A0AA70871F7FA00E00B4E5EB /* InputCell.swift */,
-				A0AA70881F7FA00E00B4E5EB /* InputCell.xib */,
-				A04D48C31F7FBDE500398D57 /* ButtonCell.swift */,
-				A04D48C41F7FBDE500398D57 /* ButtonCell.xib */,
+				A04D48EC1F81281A00398D57 /* PickService */,
+				A04D48EB1F81280500398D57 /* OtherServices */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -352,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				A0AA70951F7FA7BC00B4E5EB /* BaseController.swift */,
+				A07C68D11F83DE7100D72800 /* BaseNavController.swift */,
 			);
 			path = BaseController;
 			sourceTree = "<group>";
@@ -359,6 +463,9 @@
 		A0AA70991F7FAB5900B4E5EB /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				A02FFC6B1F8AB1D400EDC6EA /* BottomTextField */,
+				A04D48E21F80FC4900398D57 /* NibView */,
+				A04D48D51F80139800398D57 /* FooterView */,
 				A0AA709B1F7FAB7300B4E5EB /* PickerView */,
 			);
 			path = CustomViews;
@@ -451,7 +558,7 @@
 				TargetAttributes = {
 					A077D6261F7F9484006AB335 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					A077D63A1F7F9485006AB335 = {
 						CreatedOnToolsVersion = 9.0;
@@ -491,12 +598,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0AA708A1F7FA00E00B4E5EB /* InputCell.xib in Resources */,
+				A04D48F01F81283800398D57 /* CostCell.xib in Resources */,
+				A04D48F41F8129CF00398D57 /* TotalCell.xib in Resources */,
 				A077D6351F7F9484006AB335 /* LaunchScreen.storyboard in Resources */,
 				A077D6321F7F9484006AB335 /* Assets.xcassets in Resources */,
 				A0AA70A01F7FAD8100B4E5EB /* PickerController.xib in Resources */,
 				A04D48C61F7FBDE500398D57 /* ButtonCell.xib in Resources */,
 				A0AA70861F7F9FFF00B4E5EB /* DropdownCell.xib in Resources */,
 				A077D6301F7F9484006AB335 /* Main.storyboard in Resources */,
+				A04D48DB1F80E67200398D57 /* OtherServicesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,15 +683,19 @@
 				A0AA70961F7FA7BC00B4E5EB /* BaseController.swift in Sources */,
 				A077D62D1F7F9484006AB335 /* MainController.swift in Sources */,
 				A0AA708B1F7FA0C400B4E5EB /* UITableView+Extensions.swift in Sources */,
+				A07C68D21F83DE7100D72800 /* BaseNavController.swift in Sources */,
+				A02FFC6D1F8AB1F000EDC6EA /* BottomTextField.swift in Sources */,
 				A077D6591F7F98A6006AB335 /* Request.swift in Sources */,
+				A04D48E81F81004E00398D57 /* BaseCost.swift in Sources */,
 				A0AA709C1F7FABD000B4E5EB /* PickerView.swift in Sources */,
 				A08245EF1F7FB71300443BDA /* PickServiceConfigurator.swift in Sources */,
 				A08245F11F7FB71E00443BDA /* PickServiceInteractor.swift in Sources */,
 				A077D6601F7F9900006AB335 /* APIManager.swift in Sources */,
+				A05F1D081F88E4B5005D1FCF /* Int+Extensions.swift in Sources */,
 				A0AA70771F7F9AA300B4E5EB /* MainPresenter.swift in Sources */,
-				A04D48CD1F7FC95E00398D57 /* Inputs.swift in Sources */,
 				A08245F71F7FB73500443BDA /* PickServiceModels.swift in Sources */,
 				A0AA70791F7F9AAB00B4E5EB /* MainWorker.swift in Sources */,
+				A04D48E91F81017D00398D57 /* Cost.swift in Sources */,
 				A0AA708D1F7FA0C900B4E5EB /* UIView+Extensions.swift in Sources */,
 				A08245ED1F7FB65600443BDA /* PickServiceController.swift in Sources */,
 				A0AA70891F7FA00E00B4E5EB /* InputCell.swift in Sources */,
@@ -589,20 +703,30 @@
 				A04D48CF1F7FC96200398D57 /* Services.swift in Sources */,
 				A08245E51F7FAF2C00443BDA /* MainCellType.swift in Sources */,
 				A0AA708C1F7FA0C600B4E5EB /* UITableViewCell+Extensions.swift in Sources */,
+				A04D48EF1F81283800398D57 /* CostCell.swift in Sources */,
 				A0AA70981F7FAB2500B4E5EB /* UIViewController+Extensions.swift in Sources */,
+				A05F1D061F88DF61005D1FCF /* InputSection.swift in Sources */,
 				A077D62B1F7F9484006AB335 /* AppDelegate.swift in Sources */,
 				A04D48D01F7FC96400398D57 /* Service.swift in Sources */,
 				A08245F51F7FB72F00443BDA /* PickServiceRouter.swift in Sources */,
+				A04D48E31F80FC5600398D57 /* NibView.swift in Sources */,
 				A077D65B1F7F98CC006AB335 /* Constants.swift in Sources */,
 				A0AA70751F7F9A9600B4E5EB /* MainInteractor.swift in Sources */,
 				A0AA707D1F7F9C5F00B4E5EB /* MainModels.swift in Sources */,
 				A04D48CE1F7FC96000398D57 /* Options.swift in Sources */,
+				A04D48D91F80E66A00398D57 /* OtherServicesView.swift in Sources */,
 				A08245E21F7FAEDA00443BDA /* BaseCell.swift in Sources */,
+				A02FFC6A1F8AAB5800EDC6EA /* AlertHelper.swift in Sources */,
+				A04D48E01F80F90300398D57 /* UIColor+Extensions.swift in Sources */,
 				A04D48C51F7FBDE500398D57 /* ButtonCell.swift in Sources */,
 				A0AA70931F7FA6E700B4E5EB /* UITextField+Extensions.swift in Sources */,
+				A04D48D41F8006C000398D57 /* Input.swift in Sources */,
 				A0AA70851F7F9FFF00B4E5EB /* DropdownCell.swift in Sources */,
+				A04D48F31F8129CF00398D57 /* TotalCell.swift in Sources */,
 				A08245F31F7FB72800443BDA /* PickServicePresenter.swift in Sources */,
 				A08245F91F7FB75D00443BDA /* PickServiceWorker.swift in Sources */,
+				A04D48D31F8006C000398D57 /* Attributes.swift in Sources */,
+				A04D48EA1F81017F00398D57 /* Costs.swift in Sources */,
 				A0AA70731F7F9A8A00B4E5EB /* MainConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -770,13 +894,15 @@
 			baseConfigurationReference = 77A96E738F3DE2317050A353 /* Pods-LegalCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = S4KQXDBMWD;
 				INFOPLIST_FILE = LegalCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = legal.calculator.LegalCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = mk.pravenkalkulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "51897b65-f636-4e77-b074-93983c998ea5";
+				PROVISIONING_PROFILE_SPECIFIER = PravenKalkulator;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -787,13 +913,16 @@
 			baseConfigurationReference = 8930AFBE787B36129DD024D1 /* Pods-LegalCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = S4KQXDBMWD;
 				INFOPLIST_FILE = LegalCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = legal.calculator.LegalCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = mk.pravenkalkulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e78acff4-bbda-4f7e-b9ea-ad851a77ff78";
+				PROVISIONING_PROFILE_SPECIFIER = PravenKalkulatorAppStore;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

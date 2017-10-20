@@ -15,7 +15,7 @@ protocol MainControllerInput
 
 protocol MainControllerOutput
 {
-//    func fetchItems(request: TestModel.Fetch.Request)
+    func calculate(request: MainModel.Calculate.Request)
 }
 
 class MainController: BaseController {
@@ -25,8 +25,14 @@ class MainController: BaseController {
     
     //MARK: - Private Properties
     @IBOutlet fileprivate weak var mainTableView: UITableView!
+    @IBOutlet fileprivate weak var moreOptionsBtn: UIButton!
+    @IBOutlet fileprivate weak var moreOptionsHeight: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var otherServicesView: OtherServicesView!
+    @IBOutlet fileprivate weak var calculateBtn: UIButton!
 
-//    fileprivate let cells: [MainCellType] = [.input, .input, .dropdown, .input, .dropdown, .dropdown, .button]
+    fileprivate var firstRowHeight: CGFloat = 0
+    fileprivate var params: [String : Any] = [String : Any]()
+    fileprivate let headerHeight: CGFloat = 40
     
     // MARK: - Object lifecycle
     override func awakeFromNib(){
@@ -45,46 +51,84 @@ class MainController: BaseController {
     override func keyboardHidden() {
         mainTableView.keyboardClosed()
     }
+    
+    func successCalculation(viewModel: MainModel.Calculate.ViewModel) {
+        otherServicesView.baseCost = viewModel.baseCost
+        onMoreOptionsButton(btn: moreOptionsBtn)
+    }
+    func errorCalculation(viewModel: MainModel.Calculate.ViewModel) {
+        
+    }
 }
 extension MainController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == service.inputs[indexPath.section].inputs.count-1 && indexPath.section == 0{
+            firstRowHeight = cell.height() + cell.y() + 20
+        }
+    }
 }
 extension MainController: UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return service.inputs.count
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return headerHeight
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let title = service.inputs[section].type.rawValue
+        let v = UIView(frame: CGRect(x: 0, y: 0, width: tableView.width(), height: headerHeight))
+        let lbl = UILabel(frame: CGRect(x: 16, y: headerHeight/2, width: view.width() - 16, height: headerHeight/2))
+        lbl.text = title
+        lbl.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        lbl.textColor = UIColor.darkGray
+        v.addSubview(lbl)
+        return v
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let inputs = service.inputs{
-            return inputs.count
-        }
-        return 0
+        return service.inputs[section].inputs.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let input = service.inputs?[indexPath.row], let type = input.type else {return UITableViewCell()}
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: type.cellType().cellReuseIdentifier()) as! BaseCell
-        cell.type = type
+        let input = service.inputs[indexPath.section].inputs[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: input.type!.cellType().cellReuseIdentifier()) as! BaseCell
+        cell.type = input.type
         cell.updateCellWithInput(input: input)
 
-        if type == .dropdown{
+        if input.type == .dropdown{
             let c = cell as! DropdownCell
+            
+            if let o = input.attributes?.options{
+                if let i = params[input.varValue] as? Int{
+                    cell.setValue(value: o[i])
+                }else{
+                    cell.setValue(value: o[0])
+                }
+            }
+            
             c.onDropdownBlock = { [weak self] (options) in
                 guard let s = self else {return}
                 s.showPickerController(pickerOptions: options, selectedIndex: { (index) in
                     let str = options[index]
                     c.setPickedItem(text: str)
-                    print(str)
+                    s.params[input.varValue] = index
                 })
             }
-        }else if type == .input{
+        }else if input.type == .input{
             let c = cell as! InputCell
-            c.textBlock = { (text) in
-                print(text)
-            }
-        }else if type == .button{
-            let c = cell as! ButtonCell
-            c.onActionBlock = { [weak self] in
-                guard let s = self else {return}
-                
+            cell.setValue(value: params[input.varValue] ?? "")
+
+            c.textBlock = { [unowned self] (text) in
+                if text.characters.count == 0{
+                    self.params.removeValue(forKey: input.varValue)
+                }else{
+                    self.params[input.varValue] = text
+                }
             }
         }
         return cell
@@ -94,22 +138,65 @@ extension MainController: UITableViewDataSource{
 private extension MainController{
     func setupUI(){
         navigationController?.navigationBar.topItem?.title = ""
-        navigationController?.navigationBar.barTintColor = UIColor.white
         title = service.title
-        mainTableView.reloadData()
-
+        moreOptionsBtn.transform = moreOptionsBtn.transform.rotated(by: CGFloat(Double.pi))
         registerCells()
+        defaultParams()
     }
     
-    func registerCells(){
-        if let inputs = service.inputs{
-            for i in inputs{
-                if let type = i.type?.cellType(){
-                    mainTableView.registerNibForCellClass(type)
-                }
+    func defaultParams(){
+        params["procedure_id"] = service.id
+        if let opt = service.inputs.filter({$0.type == .optional}).first{
+            for i in opt.inputs{
+                params[i.varValue] = i.attributes?.placeholder ?? ""
             }
         }
     }
+    func canProceed() -> Bool{
+        var canProceed = true
+        if let opt = service.inputs.filter({$0.type == .mandatory}).first{
+            for i in opt.inputs{
+                if params[i.varValue] == nil{
+                    canProceed = false
+                    break
+                }
+            }
+        }
+        return canProceed
+    }
     
+    @IBAction func onCalculateButton(btn: UIButton){
+        if !canProceed(){
+            AlertHelper.showAlertWithType(.ok, title: "", message: "Пополнете ги сите задолжителни полиња.", presenter: self)
+            return
+        }
+        output.calculate(request: MainModel.Calculate.Request(params: params))
+    }
+
+    @IBAction func onMoreOptionsButton(btn: UIButton){
+        btn.isSelected = !btn.isSelected
+        
+        if btn.isSelected{
+            moreOptionsHeight.constant =  view.frame.height - (mainTableView.y() + firstRowHeight)
+        }else{
+            moreOptionsHeight.constant = 90
+        }
+        
+        otherServicesView.alpha = btn.isSelected ? 0 : 1
+        
+        UIView.animate(withDuration: 0.3, animations: ({
+            self.otherServicesView.alpha = btn.isSelected ? 1 : 0
+            self.calculateBtn.isHidden = btn.isSelected
+            self.moreOptionsBtn.transform = self.moreOptionsBtn.transform.rotated(by: CGFloat(Double.pi))
+            self.mainTableView.isUserInteractionEnabled = !btn.isSelected
+            self.view.layoutSubviews()
+        }))
+    }
+    
+    func registerCells(){
+        mainTableView.registerNibForCellClass(ButtonCell.self)
+        mainTableView.registerNibForCellClass(DropdownCell.self)
+        mainTableView.registerNibForCellClass(InputCell.self)
+    }
 }
 

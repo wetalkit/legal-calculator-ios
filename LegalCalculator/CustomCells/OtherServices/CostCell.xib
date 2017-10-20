@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="CostCell" customModule="LegalCalculator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Солемнизација" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEd-1B-4m3">
+                        <rect key="frame" x="8" y="0.0" width="150" height="44"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.57647058823529407" green="0.57647058823529407" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3,400 МКД" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASS-Ck-TEW">
+                        <rect key="frame" x="162" y="0.0" width="150" height="44"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="hEd-1B-4m3" secondAttribute="bottom" id="27R-Qo-Aha"/>
+                    <constraint firstItem="hEd-1B-4m3" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.47" id="6rI-VH-xqx"/>
+                    <constraint firstItem="hEd-1B-4m3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CsZ-XE-KtA"/>
+                    <constraint firstItem="ASS-Ck-TEW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="K7V-0Y-DWW"/>
+                    <constraint firstAttribute="trailing" secondItem="ASS-Ck-TEW" secondAttribute="trailing" constant="8" id="MlL-ib-mR8"/>
+                    <constraint firstItem="hEd-1B-4m3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="RDg-6N-6JE"/>
+                    <constraint firstItem="ASS-Ck-TEW" firstAttribute="width" secondItem="hEd-1B-4m3" secondAttribute="width" id="VLr-JD-uwL"/>
+                    <constraint firstAttribute="bottom" secondItem="ASS-Ck-TEW" secondAttribute="bottom" id="apo-hw-Rd0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="costLbl" destination="ASS-Ck-TEW" id="ovX-y1-I1E"/>
+                <outlet property="nameLbl" destination="hEd-1B-4m3" id="pMp-fy-c0q"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

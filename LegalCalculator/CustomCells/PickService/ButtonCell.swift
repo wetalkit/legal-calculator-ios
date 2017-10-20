@@ -21,7 +21,7 @@ class ButtonCell: BaseCell {
         // Initialization code
     }
     
-    override func updateCellWithInput(input: Inputs) {
+    override func updateCellWithInput(input: Input) {
         
     }
     

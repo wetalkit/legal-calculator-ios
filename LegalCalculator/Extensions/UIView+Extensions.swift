@@ -27,6 +27,17 @@ extension UIView {
         }
     }
     
+    @IBInspectable var makeRounded: Bool {
+        set (rounded) {
+            if rounded{
+                layer.cornerRadius = width()/2
+                layer.masksToBounds = true
+            }
+        } get {
+            return false
+        }
+    }
+
     @IBInspectable var borderColor: UIColor {
         set (color) {
             layer.borderWidth = 1
@@ -36,7 +47,37 @@ extension UIView {
         }
     }
     
+    func setBottomBorder()
+    {
+        if let sublayers = layer.sublayers {
+            for sl in sublayers{
+                if sl.name == "100"{
+                    sl.removeFromSuperlayer()
+                }
+            }
+        }
+        
+        let border = CALayer()
+        border.name = "100"
+        let width = CGFloat(1)
+        border.borderColor = UIColor.black.withAlphaComponent(0.25).cgColor
+        border.frame = CGRect(x: 0, y: self.height() - width,   width:  self.width(), height: self.height())
+        print(self.width())
+        
+        border.borderWidth = width
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+    }
     
+    func setBottomLine(){
+        let borderLine = UIView()
+        let height = 1.0
+        borderLine.frame = CGRect(x: 0, y: Double(self.frame.height) - height, width: Double(self.frame.width), height: height)
+        
+        borderLine.backgroundColor = UIColor.black.withAlphaComponent(0.25)
+        addSubview(borderLine)
+    }
+
     func setBorder(width: CGFloat, color: UIColor) {
         layer.borderWidth = width
         layer.borderColor = color.cgColor

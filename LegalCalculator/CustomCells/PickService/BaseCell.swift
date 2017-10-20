@@ -12,12 +12,9 @@ class BaseCell: UITableViewCell {
     
     var type: MainCellType!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    func setValue(value: Any){}
 
-    func updateCellWithInput(input: Inputs){}
+    func updateCellWithInput(input: Input){}
 
     
 }
